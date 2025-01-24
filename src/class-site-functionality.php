@@ -18,6 +18,7 @@ use Site_Functionality\App\Frontend\Frontend_Assets;
 use Site_Functionality\Common\WP_Includes\I18n;
 use Site_Functionality\App\Post_Types\Post_Types;
 use Site_Functionality\App\Taxonomies\Taxonomies;
+use Site_Functionality\App\Blocks\Blocks;
 
 /**
  * Hooks the plugin's classes to WordPress's actions and filters.
@@ -104,10 +105,9 @@ class Site_Functionality {
 	 * @since    1.0.0
 	 */
 	protected function load_dependencies(): void {
-
 		$post_types = new Post_Types( $this->settings );
 		$taxonomies = new Taxonomies( $this->settings );
-
+		$blocks	 = new Blocks( $this->settings );
 	}
 
 }
