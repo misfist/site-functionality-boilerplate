@@ -39,7 +39,10 @@ if ( ! defined( 'WPINC' ) ) {
 	throw new \Exception( 'WordPress required but not loaded.' );
 }
 
-require_once plugin_dir_path( __FILE__ ) . 'autoload.php';
+$autoload = __DIR__ . '/vendor/autoload.php';
+if ( file_exists( $autoload ) ) {
+	require_once $autoload;
+}
 
 /**
  * Current plugin version.
